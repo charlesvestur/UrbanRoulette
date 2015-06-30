@@ -1,0 +1,48 @@
+<template name="formDatabase">
+<div class="col-md-3">
+</div>
+<div class="col-md-6">
+	{{#autoForm collection="Activities" id="submitActivity" type="insert"}}
+		<fieldset>
+			<legend>Rentrez une activité !</legend>
+			{{> afQuickField name="name"}}
+			{{> afQuickField name="type"}}
+			{{> afQuickField name="address"}}
+			{{> afQuickField name="specific"}}
+			{{> afQuickField name="description" rows=5}}
+			{{> afQuickField name="price"}}
+			<br/>
+			<form name="myhealthform" id="myhealthform">
+				<input type="radio" name="exactPrice" value="register" id="exactPrice-radio"/>
+				Prix exact<br/>
+				<input type="radio" name="exactPrice" value="register" id="estimation-radio"/>
+				Estimation
+			</form>
+			{{> afQuickField name="last"}}
+			<p><strong>Sélectionnez les horaires de DEBUT D'ACTIVITE 	valides (ex:"1830-20", ou juste "19" pour une séance à 19h)</strong></p>
+			<form>
+				<input type="text" name="defaultValue" value="" id="defaultValue"/>
+				<div id="checkboxes">
+					<input type="checkbox" name="weekdays" value="" id="weekdays" checked/> Semaine
+					<input type="checkbox" name="weekend" value="" id="weekend" checked/> Week-end
+				</div>
+			</form>
+			{{> afQuickField name="monday" value=valueHelper}}
+			{{> afQuickField name="tuesday"}}
+			{{> afQuickField name="wednesday"}}
+			{{> afQuickField name="thursday"}}
+			{{> afQuickField name="friday"}}
+			{{> afQuickField name="saturday"}}
+			{{> afQuickField name="sunday"}}
+			{{> afQuickField name="mark"}}
+			{{> afQuickField name="contact"}}
+			{{> afQuickField name="image"}}
+			<strong>OU uploader une image</strong>	
+			<input type="file" name="illustration" id="illustration"/>
+		</fieldset>
+		<button type="submit" class="btn btn-primary" id="submit-button">Proposer l'activité</button>
+	{{/autoForm}}
+</div>
+<div class="col-md-6">
+</div>
+</template>

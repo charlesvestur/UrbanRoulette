@@ -1,0 +1,55 @@
+.control-label {
+	margin: 10px 0 10px 10px;
+	display: block;
+}	
+
+.form-control {
+	display: block;
+	  width: 80%;
+}
+
+.panel.panel-default {
+	display: -webkit-box;
+	margin-bottom: 0px;
+	border-bottom: none;
+}
+
+.panel-heading {
+	  display: inline-block;
+	  width: 100px;
+}
+
+.list-group-item {
+	border: none;
+	padding: 0 0 0 20px;
+	display: table-cell;
+}
+
+.autoform-remove-item-wrap {
+	padding: 0px;
+}
+
+#defaultValue {
+	margin-left: 175px;
+	margin-bottom: 10px;
+	width: 86.5px;
+}
+
+#checkboxes {
+	display: inline-block;
+}
+
+#myhealthform {
+  display: inline-block;
+  background-color: #fafafa;
+  padding: 10px;
+  border: 2px solid #979797;
+}
+
+#submit-button {
+	margin-bottom: 150px;
+}
+
+input[type="file"] {
+	margin: 20px 0 20px 0;
+}
