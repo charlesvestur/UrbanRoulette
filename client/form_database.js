@@ -26,36 +26,28 @@ $('.summernote').summernote({
   ]
 	});
 $(".list-group-item").css({'display': 'table-cell', 'padding':'0 0 0 20px', 'border': 'none'});
-});
-
-Template.formDatabase.helpers({
-	valueHelper: function() {
-		return $('#defaultValue').val();
-	},
-	test: function()  {
-		return Activities.find({});
-	}
+// $(".autoform-add-item").trigger('click');
 });
 
 Template.formDatabase.events({
-	'blur #defaultValue': function(e) {
-	var value = $('#defaultValue').val();
-	if($('#weekdays').prop('checked')) {
+	'blur #defaultValue0': function(e) {
+	var value = $('#defaultValue0').val();
+	if($('#weekdays0').prop('checked')) {
 		$("[name='monday.0']").val(value);
 		$("[name='tuesday.0']").val(value);
 		$("[name='wednesday.0']").val(value);
 		$("[name='thursday.0']").val(value);
 		$("[name='friday.0']").val(value);
 	}
-	if ($('#weekdays').prop('checked')){
+	if ($('#weekdays0').prop('checked')){
 		$("[name='saturday.0']").val(value);
 		$("[name='sunday.0']").val(value);
 	}
 	},
 
-	'change #weekdays': function(e) {
-		var value = $('#defaultValue').val();
-		if($('#weekdays').prop('checked')) {
+	'change #weekdays0': function(e) {
+		var value = $('#defaultValue0').val();
+		if($('#weekdays0').prop('checked')) {
 		$("[name='monday.0']").val(value);
 		$("[name='tuesday.0']").val(value);
 		$("[name='wednesday.0']").val(value);
@@ -71,9 +63,9 @@ Template.formDatabase.events({
 		}
 	},
 
-	'change #weekend': function(e) {
-		var value = $('#defaultValue').val();
-		if($('#weekend').prop('checked')) {
+	'change #weekend0': function(e) {
+		var value = $('#defaultValue0').val();
+		if($('#weekend0').prop('checked')) {
 		$("[name='saturday.0']").val(value);
 		$("[name='sunday.0']").val(value);		
 		}
@@ -81,5 +73,63 @@ Template.formDatabase.events({
 		$("[name='saturday.0']").val(null);
 		$("[name='sunday.0']").val(null);
 		}
+	},
+	'blur #defaultValue1': function(e) {
+	var value = $('#defaultValue1').val();
+	if($('#weekdays1').prop('checked')) {
+		$("[name='monday.1']").val(value);
+		$("[name='tuesday.1']").val(value);
+		$("[name='wednesday.1']").val(value);
+		$("[name='thursday.1']").val(value);
+		$("[name='friday.1']").val(value);
 	}
+	if ($('#weekdays0').prop('checked')){
+		$("[name='saturday.0']").val(value);
+		$("[name='sunday.0']").val(value);
+	}
+	},
+
+	'change #weekdays1': function(e) {
+		var value = $('#defaultValue1').val();
+		if($('#weekdays1').prop('checked')) {
+		$("[name='monday.1']").val(value);
+		$("[name='tuesday.1']").val(value);
+		$("[name='wednesday.1']").val(value);
+		$("[name='thursday.1']").val(value);
+		$("[name='friday.1']").val(value);			
+		}
+		else {
+		$("[name='monday.1']").val(null);
+		$("[name='tuesday.1']").val(null);
+		$("[name='wednesday.1']").val(null);
+		$("[name='thursday.1']").val(null);
+		$("[name='friday.1']").val(null);
+		}
+	},
+
+	'change #weekend1': function(e) {
+		var value = $('#defaultValue1').val();
+		if($('#weekend1').prop('checked')) {
+		$("[name='saturday.1']").val(value);
+		$("[name='sunday.1']").val(value);		
+		}
+		else {
+		$("[name='saturday.1']").val(null);
+		$("[name='sunday.1']").val(null);
+		}
+	},
+	'click #add-all-button': function(e) {
+/*		if($("[name='monday.1']").get(0))
+			$(".autoform-remove-item").trigger('click');
+		else
+*/			$(".autoform-add-item").trigger('click');
+	},
+
+	'click .autoform-add-item': function(e) {
+		$('#days1').css('display', 'inline-block');
+	},
+	'click .autoform-remove-item': function(e) {
+//		if($("[name='monday.1']").get(0) || $("[name='tuesday.1']").get(0) || $("[name='wednesday.1']").get(0) || $("[name='thursday.1']").get(0) || $("[name='friday.1']").get(0) || $("[name='saturday.1']").get(0) || $("[name='sunday.1']").get(0))
+			$('#days1').css('display', 'none');
+	},
 });

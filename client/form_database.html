@@ -17,29 +17,45 @@
 		{{#autoForm collection="Activities" id="submitActivity" type="insert"}}
 			<fieldset>
 				<legend>Rentrez une activité !</legend>
+				{{> afQuickField name="specific"}}
 				{{> afQuickField name="name"}}
 				{{> afQuickField name="type"}}
-				{{> afQuickField name="address"}}
-				{{> afQuickField name="specific"}}
+				{{> afQuickField name="address"}}	
 				{{> afQuickField name="description" rows=10}}
 				{{> afQuickField name="price"}}
 				<br/>
-				<form name="myhealthform" id="myhealthform">
-					<input type="radio" name="exactPrice" value="register" id="exactPrice-radio"/>
-					Prix exact<br/>
-					<input type="radio" name="exactPrice" value="register" id="estimation-radio"/>
-					Estimation
-				</form>
+				<div id="days.0">
+					<form name="myhealthform" id="myhealthform">
+						<input type="radio" name="exactPrice" value="register" id="exactPrice-radio"/>
+						Prix exact<br/>
+						<input type="radio" name="exactPrice" value="register" id="estimation-radio"/>
+						Estimation
+					</form>
+				</div>
 				{{> afQuickField name="last"}}
 				<p><strong>Sélectionnez les horaires de DEBUT D'ACTIVITE 	valides (ex:"1830-20", ou juste "19" pour une séance à 19h)</strong></p>
-				<form>
-					<input type="text" name="defaultValue" value="" id="defaultValue"/>
-					<div id="checkboxes">
-						<input type="checkbox" name="weekdays" value="" id="weekdays" checked/> Semaine
-						<input type="checkbox" name="weekend" value="" id="weekend" checked/> Week-end
+				<div id="days">
+					<div id="days0">
+						<form>
+							<input type="text" name="defaultValue.0" value="" id="defaultValue0"/>
+								<input type="checkbox" name="weekdays.0" value="" id="weekdays0" checked/> Semaine
+							<div id="checkbox-weekend0">
+								<input type="checkbox" name="weekend.0" value="" id="weekend0" checked/> Week-end
+							</div>
+						</form>
 					</div>
-				</form>
-				{{> afQuickField name="monday" value=valueHelper}}
+					<button type="button" class="btn btn-primary" id="add-all-button"><span class="glyphicon glyphicon-plus"></span></button>
+					<div id="days1">
+						<form>
+							<input type="text" name="defaultValue.0" value="" id="defaultValue1"/>
+								<input type="checkbox" name="weekdays.0" value="" id="weekdays1" checked/> Semaine
+							<div id="checkbox-weekend1">
+								<input type="checkbox" name="weekend.0" value="" id="weekend1" checked/> Week-end
+							</div>
+						</form>
+					</div>
+				</div>
+				{{> afQuickField name="monday"}}
 				{{> afQuickField name="tuesday"}}
 				{{> afQuickField name="wednesday"}}
 				{{> afQuickField name="thursday"}}
@@ -56,9 +72,9 @@
 		{{/autoForm}}
 	</div>
 	<div class="col-md-3">
+	<a href="{{pathFor 'database'}}">
+		Lien vers prévisualisation de la database
+	</a>
 	</div>
-{{#each test}}
-	<img src="{{image}}" alt="">
-{{/each}}
 </body>
 </template>

@@ -35,14 +35,35 @@
 	padding: 0px;
 }
 
-#defaultValue {
+#days {
 	margin-left: 175px;
-	margin-bottom: 10px;
-	width: 86.5px;
 }
 
-#checkboxes {
-	display: inline-block;
+#days0 {
+	margin-bottom: 10px;
+	width: 152px;
+}
+
+button#add-all-button {
+  margin-left: 38px;
+  margin-bottom: 10px;
+}
+
+#days1 {
+	margin-bottom: 10px;
+	width: 152px;
+}
+
+#check-box-weekend0 {
+	display: block;
+}
+
+input#defaultValue1 {
+  display: block;
+}
+
+#check-box-weekend1 {
+	display: block;
 }
 
 #myhealthform {
@@ -56,6 +77,11 @@
 	margin-bottom: 150px;
 }
 
-input[type="file"] {
-	margin: 20px 0 20px 0;
+#days0 {
+	display: inline-block;
+}
+
+#days1 {
+	display: none;
+	margin-left: 10px;
 }
