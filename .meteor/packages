@@ -13,3 +13,6 @@ aldeed:collection2
 iron:router
 twbs:bootstrap
 msavin:mongol
+summernote:summernote
+fortawesome:fontawesome
+mpowaga:autoform-summernote

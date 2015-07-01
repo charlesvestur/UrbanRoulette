@@ -11,7 +11,7 @@
 .panel.panel-default {
 	display: -webkit-box;
 	margin-bottom: 0px;
-	border-bottom: none;
+	border-bottom: none; 
 }
 
 .panel-heading {
@@ -19,7 +19,13 @@
 	  width: 100px;
 }
 
-.list-group-item {
+.list-group-item.autoform-array-item {
+	border: none;
+	padding: 0 0 0 20px;
+	display: table-cell;
+}
+
+.custom-class {
 	border: none;
 	padding: 0 0 0 20px;
 	display: table-cell;
